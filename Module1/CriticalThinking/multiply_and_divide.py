@@ -9,12 +9,12 @@ def main():
     try:
         num1 = int(input('Please enter an integer value: '))
     except ValueError:
-        raise SystemExit('Incorrect input format. Please enter an integer value.')
+        raise SystemExit('\nIncorrect input format. Please enter an integer value.\n')
 
     try:
         num2 = int(input('\nPlease enter another integer value: '))
     except ValueError:
-        raise SystemExit('Incorrect input format. Please enter an integer value.')
+        raise SystemExit('\nIncorrect input format. Please enter an integer value.\n')
 
     # Compute product and store in variable
     product_of_nums = num1 * num2
@@ -31,7 +31,7 @@ def main():
         # Output quotient
         print('The quotient of', num1, 'and', num2, 'is:', quotient_of_nums, '\n')
     except ArithmeticError:
-        raise SystemExit('Cannot divide by zero, please re-run program and choose a different second number.\n')
+        raise SystemExit('\nCannot divide by zero, please re-run program and choose a different second number.\n')
 
 
 if __name__ == '__main__':main()

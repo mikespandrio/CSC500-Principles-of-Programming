@@ -5,6 +5,8 @@
 import sys
 
 def main():
+    print("This program calculats the tax, tip, and total from the cost of a meal at a restaurant.\n")
+
     # constants
     tax_pct = 0.07
     tip_pct = 0.18

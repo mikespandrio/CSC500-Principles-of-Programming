@@ -5,6 +5,8 @@
 import sys
 
 def main():
+    print("This program calculates the time your alarm will sound based on the current hour (on a 24-hour clock) and hours to wait.\n")
+
     time_in_hours = None
     hours_to_wait = None
 

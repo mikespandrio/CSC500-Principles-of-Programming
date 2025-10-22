@@ -1,7 +1,7 @@
 # CSC500-Principles-of-Programming
 Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 
-[Module 1: Critical Thinking Assignment](#module-1-critical-thinking-assignment)
+[Module 1: Critical Thinking Assignment](#module-1-critical-thinking-assignment)  
 [Module 3: Critical Thinking Assignment](#module-3-critical-thinking-assignment)
 
 # Module 1: Critical Thinking Assignment
@@ -105,7 +105,7 @@ All files for this assignment are organized within the following directory:
 
 ---
 
-## Part 1:
+## Part 1: Calculate Meal Cost
 **Objective:** Write a Python program that calculates the total cost of a restaurant meal, including tax and tip, based on the user’s input for the meal charge.  
 The program should request the meal cost from the user, calculate an 18% tip and a 7% sales tax, then display each amount and the total price.
 
@@ -144,7 +144,7 @@ The program should request the meal cost from the user, calculate an 18% tip and
 
 ---
 
-## Part 2:
+## Part 2: 24-hour Alarm Clock
 **Objective:** Write a Python program that determines the future time on a 24-hour clock when an alarm will go off.  
 The program should ask the user for the current time (in hours, using the 24-hour format) and for the number of hours to wait. It should then calculate and display the hour when the alarm will sound, wrapping around if the time exceeds 24 hours.
 
@@ -155,7 +155,7 @@ The program should ask the user for the current time (in hours, using the 24-hou
 
 ***Begin***
 
-1. Display message: *"This program calculates the time your alarm will sound based on the current time and hours to wait."*
+1. Display message: *"This program calculates the time your alarm will sound based on the current hour (on a 24-hour clock) and hours to wait"*
 
 2. Prompt user to **enter the current hour (24-hour clock)**  
    - Convert input to an integer.  

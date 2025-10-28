@@ -3,6 +3,7 @@ Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 
 [Module 1: Critical Thinking Assignment](#module-1-critical-thinking-assignment)  
 [Module 3: Critical Thinking Assignment](#module-3-critical-thinking-assignment)
+[Module 4: Portfolio Milestone Assignment](#module-4-portfolio-milestone)
 
 # Module 1: Critical Thinking Assignment
 
@@ -173,6 +174,71 @@ The program should ask the user for the current time (in hours, using the 24-hou
 
 5. Display the result in formatted output:  
    *"The alarm will sound at [alarm_hour]:00 (based on 24-hour clock)."*
+
+***End***
+
+---
+
+# Module 4: Portfolio Milestone
+
+## Overview
+This milestone introduces class-based programming concepts through the design and implementation of an object-oriented shopping cart system.  
+The task involves defining a class to represent purchasable items, instantiating objects from user input, and computing their total cost.  
+
+All files for this assignment are organized within the following directory:  
+`/Module4/PortfolioMilestone`
+
+---
+
+## Online Shopping Cart
+
+**Objective:**  
+Write a Python program that models a basic online shopping cart using an `ItemToPurchase` class.  
+The class should contain item details (name, price, and quantity) and a method to print the item’s cost.  
+The main program should create two items based on user input and display individual and total costs.
+
+**Files Included:**  
+- `item_to_purchase.py` — Python source file for this milestone  
+
+**Pseudocode:**
+
+***Begin***
+
+### Step 1: Define the ItemToPurchase class
+1. Create class **ItemToPurchase** with the following **attributes**:  
+   - `item_name` (string)  
+   - `item_price` (float)  
+   - `item_quantity` (int)  
+2. Define a **default constructor** to initialize:  
+   - `item_name = "none"`  
+   - `item_price = 0`  
+   - `item_quantity = 0`  
+3. Define a **method** `print_item_cost()` that:  
+   - Computes the total cost as `item_price × item_quantity`  
+   - Displays output in the format:  
+     *"[item_name] [item_quantity] @ $[item_price] = $[total_cost]"*
+
+---
+
+### Step 2: Create item objects from user input
+1. Display: *"Item 1"*  
+   - Prompt user for item name, price, and quantity.  
+   - Validate input to ensure price and quantity are non-negative numeric values.  
+   - Create `item1` object from `ItemToPurchase` class.
+
+2. Display: *"Item 2"*  
+   - Prompt user for item name, price, and quantity.  
+   - Validate input similarly.  
+   - Create `item2` object from `ItemToPurchase` class.
+
+---
+
+### Step 3: Compute and display total cost
+1. Display: *"TOTAL COST"*  
+2. Call `print_item_cost()` for both `item1` and `item2`.  
+3. Compute **total** as `(item1.item_price × item1.item_quantity) + (item2.item_price × item2.item_quantity)`  
+4. Display total in formatted output:  
+   *"Total: $[total]"*
 
 ***End***
 

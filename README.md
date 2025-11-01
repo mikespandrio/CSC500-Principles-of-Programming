@@ -2,7 +2,7 @@
 Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 
 [Module 1: Critical Thinking Assignment](#module-1-critical-thinking-assignment)  
-[Module 3: Critical Thinking Assignment](#module-3-critical-thinking-assignment)
+[Module 3: Critical Thinking Assignment](#module-3-critical-thinking-assignment)  
 [Module 4: Portfolio Milestone Assignment](#module-4-portfolio-milestone)
 
 # Module 1: Critical Thinking Assignment

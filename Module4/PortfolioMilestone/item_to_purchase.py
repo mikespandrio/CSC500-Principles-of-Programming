@@ -5,16 +5,13 @@
 
 class ItemToPurchase:
 
-    # Note on requirements: Default Constructor below w/ no parameters,
-    #  but by providing parameters with defaults could be another approach,
-    #  such as __init(self, item_name="none", item_price=0, item_quantity=0):
-    #  then setting self.<param> = <param>
-    #  Requirements were taken literally to mean "default constructor w/ no parameters"
+    # default, no-arg constructor initializes class attributes
     def __init__(self):
         self.item_name = "none"
         self.item_price = 0
         self.item_quantity = 0
 
+    # method to print the item name, quantity, price, and total cost
     def print_item_cost(self):
         total_cost = self.item_price * self.item_quantity
         print("{} {} @ ${:.2f} = ${:.2f}".format(self.item_name, self.item_quantity, self.item_price, total_cost))
@@ -54,6 +51,8 @@ def main():
     print("\nTOTAL COST")
     item1.print_item_cost()
     item2.print_item_cost()
+
+    # calculate and print cart total
     print("Total: ${:.2f}\n".format((item1.item_price * item1.item_quantity) + (item2.item_price * item2.item_quantity)))
 
 if __name__ == "__main__":

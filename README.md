@@ -3,7 +3,8 @@ Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 
 [Module 1: Critical Thinking Assignment](#module-1-critical-thinking-assignment)  
 [Module 3: Critical Thinking Assignment](#module-3-critical-thinking-assignment)  
-[Module 4: Portfolio Milestone Assignment](#module-4-portfolio-milestone)
+[Module 4: Portfolio Milestone Assignment](#module-4-portfolio-milestone)  
+[Module 5: Critical Thinking Assignment](#module-5-critical-thinking-assignment)  
 
 # Module 1: Critical Thinking Assignment
 
@@ -239,6 +240,109 @@ The main program should create two items based on user input and display individ
 3. Compute **total** as `(item1.item_price × item1.item_quantity) + (item2.item_price × item2.item_quantity)`  
 4. Display total in formatted output:  
    *"Total: $[total]"*
+
+***End***
+
+---
+
+# Module 5: Critical Thinking Assignment
+
+## Overview
+The assignment is divided into two parts:  
+Part 1 focuses on collecting and analyzing rainfall data using nested loops.  
+Part 2 focuses on using conditional logic to calculate book club reward points based on the number of books purchased.  
+
+All files for this assignment are organized within the following directory:  
+`/Module5/CriticalThinking`  
+
+---
+
+## Part 1: Monthly Rainfall Data Collection
+**Objective:**  
+Write a Python program that uses nested loops to collect rainfall data and calculate the average rainfall over a given number of years.  
+The outer loop should iterate once for each year, and the inner loop should iterate twelve times (once per month).  
+After all iterations, the program should display the total number of months, total inches of rainfall, and the average monthly rainfall across the entire period.
+
+**Files Included:**  
+- `monthly_rainfall.py` — Python source file for Part 1  
+
+**Pseudocode:**
+
+***Begin***
+
+1. Display header: *"Monthly Rainfall Data Entry"*  
+
+2. Prompt user to **enter the number of years**  
+   - Convert input to an integer.  
+   - If the value is less than or equal to zero, display error:  
+     *"Number of years must be a positive integer."*  
+   - Exit program on invalid input.  
+
+3. Initialize variable **total_rainfall = 0.0**  
+
+4. **For each year (outer loop):**  
+   1. Display the year number.  
+   2. Initialize **month_index = 0**.  
+
+   3. **While month_index < 12 (inner loop):**  
+      - Prompt user to **enter rainfall (in inches)** for the current month.  
+      - Convert input to a float.  
+      - If the value is negative, display error:  
+        *"Rainfall must be a non-negative number."*  
+        - Prompt again until valid input is entered.  
+      - Add the valid rainfall amount to **total_rainfall**.  
+      - Increment **month_index** by 1.  
+
+5. After both loops complete:  
+   - Compute **total_months = num_years × 12**  
+   - Compute **average_rainfall = total_rainfall ÷ total_months**  
+
+6. Display the results:  
+   - *"Total number of months: [total_months]"*  
+   - *"Total inches of rainfall: [total_rainfall]"*  
+   - *"Average monthly rainfall: [average_rainfall]"*  
+
+***End***
+
+---
+
+## Part 2: Book Club Rewards
+**Objective:**  
+Write a Python program that calculates the number of reward points earned based on the number of books purchased in a month.  
+The program should prompt the user for the number of books purchased and then award points according to the following rules:
+
+- 0 books → 0 points  
+- 2 books → 5 points  
+- 4 books → 15 points  
+- 6 books → 30 points  
+- 8 or more books → 60 points  
+
+**Files Included:**  
+- `book_club_rewards.py` — Python source file for Part 2  
+
+**Pseudocode:**
+
+***Begin***
+
+1. Display header: *"Book Club Rewards"*
+
+2. Prompt user to **enter the number of books purchased this month**  
+   - Convert input to an integer.  
+   - If the value is negative, display error:  
+     *"Number of books purchased must be non-negative."*  
+   - Exit program on invalid input.
+
+3. Initialize **reward_points_earned = 0**
+
+4. Use conditional logic to determine points:  
+   - If **books_purchased >= 8**, set **reward_points_earned = 60**  
+   - Else if **books_purchased >= 6**, set **reward_points_earned = 30**  
+   - Else if **books_purchased >= 4**, set **reward_points_earned = 15**  
+   - Else if **books_purchased >= 2**, set **reward_points_earned = 5**  
+   - Else, keep **reward_points_earned = 0**
+
+5. Display the result:  
+   - *"Reward points earned: [reward_points_earned]"*
 
 ***End***
 

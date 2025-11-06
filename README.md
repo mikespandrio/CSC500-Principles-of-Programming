@@ -5,6 +5,7 @@ Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 [Module 3: Critical Thinking Assignment](#module-3-critical-thinking-assignment)  
 [Module 4: Portfolio Milestone Assignment](#module-4-portfolio-milestone)  
 [Module 5: Critical Thinking Assignment](#module-5-critical-thinking-assignment)  
+[Module 6: Portfolio Milestone Assignment](#module-6-portfolio-milestone)  
 
 # Module 1: Critical Thinking Assignment
 
@@ -343,6 +344,73 @@ The program should prompt the user for the number of books purchased and then aw
 
 5. Display the result:  
    - *"Reward points earned: [reward_points_earned]"*
+
+***End***
+
+---
+
+# Module 6: Portfolio Milestone
+
+## Overview
+This milestone continues the online shopping cart project by introducing a `ShoppingCart` class and a menu-driven interface that allows users to add, remove, modify items, and display cart information.  
+All files for this assignment are organized within the following directory:  
+`/Module6/PortfolioMilestone`
+
+---
+
+## Online Shopping Cart
+
+**Objective:**  
+Write a Python program that expands the shopping cart system using an `ItemToPurchase` class and a new `ShoppingCart` class. The program should provide a text menu to add items, remove items, change item quantities, output item descriptions, and output the full shopping cart summary.
+
+**Files Included:**  
+- `shopping_cart.py` — Python source file for this milestone
+
+**Pseudocode:**
+
+***Begin***
+
+### Step 4: Build the `ShoppingCart` class
+1. Create class **ShoppingCart** with attributes:  
+   - `customer_name` (string) — default `"none"`  
+   - `current_date` (string) — default `"January 1, 2020"`  
+   - `cart_items` (list of `ItemToPurchase`)
+2. Implement methods:  
+   - `add_item(item: ItemToPurchase)` — append item to `cart_items`.  
+   - `remove_item(item_name: str)` — remove matching item by name; if not found, display:  
+     *"Item not found in cart. Nothing removed."*  
+   - `modify_item(item: ItemToPurchase)` — update matching item’s description, price, and/or quantity if provided; if not found, display:  
+     *"Item not found in cart. Nothing modified."*  
+   - `get_num_items_in_cart()` — return the sum of all item quantities in the cart
+   - `get_cost_of_cart()` — return total cost across all items.  
+   - `print_total()` — output cart heading, itemized costs, and total; if empty, display:  
+     *"SHOPPING CART IS EMPTY"*  
+   - `print_descriptions()` — output cart heading and each item’s description.
+
+---
+
+### Step 5: Implement `print_menu(cart: ShoppingCart)`
+1. Display menu:
+   ```
+   MENU
+   a - Add item to cart
+   r - Remove item from cart
+   c - Change item quantity
+   i - Output items' descriptions
+   o - Output shopping cart
+   q - Quit
+   ```
+2. Prompt for a single-character option; on invalid input, re-prompt.  
+3. Continue processing options until the user enters `q` (Quit).
+
+---
+
+### Step 6: Implement menu options
+- **a (Add item):** Prompt for name, description, price, quantity; create `ItemToPurchase`; call `add_item()`.  
+- **r (Remove item):** Prompt for item name; call `remove_item()`.  
+- **c (Change item quantity):** Prompt for item name and new quantity; call `modify_item()`.  
+- **i (Output items’ descriptions):** Call `print_descriptions()`.  
+- **o (Output shopping cart):** Call `print_total()`.
 
 ***End***
 

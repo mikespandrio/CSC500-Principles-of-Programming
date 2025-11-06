@@ -33,6 +33,12 @@ while i < num_salaries:
 	if max is None or max < salaries[i]:
 		max = salaries[i]
 	i += 1
+
+# Average salary over 20 years (for all data in the array)
 print(f"Average salary: ${(total / num_salaries):.2f}")
+
+# Total earned (sum of all salaries)
 print(f"Total earned: ${total:.2f}")
+
+# Min and Max
 print(f"Minimum salary was: ${min}, and maximum salary was: ${max}")

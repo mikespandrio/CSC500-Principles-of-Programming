@@ -16,3 +16,7 @@ my_list.sort(reverse=True)
 print(my_list[:])
 
 print(my_list[::-1])
+
+my_list.reverse()
+
+print(my_list)

@@ -19,11 +19,12 @@ def main():
         exit(1)
     
     total_rainfall = 0.0
+    num_months = len(month_names)
     for i in range(num_years):
         print(f"\nYear {i + 1}:")
 
         month_index = 0
-        while month_index < 12:
+        while month_index < num_months:
             try:
                 monthly_rainfall = float(input(f"Enter the rainfall for {month_names[month_index]} (in inches): "))
                 if monthly_rainfall < 0:
@@ -33,9 +34,9 @@ def main():
             except ValueError:
                 print("Invalid input. Please enter a non-negative numeric value for rainfall.")
 
-    print(f"\nTotal number of months: {num_years * 12}")
+    print(f"\nTotal number of months: {num_years * num_months}")
     print(f"Total inches of rainfall: {total_rainfall:.2f}")
-    print(f"Average monthly rainfall: {total_rainfall / (num_years * 12)} inches\n")
+    print(f"Average monthly rainfall: {total_rainfall / (num_years * num_months)} inches\n")
 
 if __name__ == "__main__":
     main()

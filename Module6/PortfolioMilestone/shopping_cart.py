@@ -4,6 +4,7 @@
 # Build the ShoppingCart class
 # Note that this builds and improves upon Module 4's Portffolio Milestone submission
 
+# ItemToPurchase class with default constructor, initialization within constructor,
 class ItemToPurchase:
     DEFAULT_NAME_AND_DESC = "none"
     DEFAULT_PRICE = 0.00
@@ -15,10 +16,12 @@ class ItemToPurchase:
         self.item_price = ItemToPurchase.DEFAULT_PRICE
         self.item_quantity = ItemToPurchase.DEFAULT_QUANT
 
+    # Method to print the items cost, multiplying quantity by price
     def print_item_cost(self):
         total_cost = self.item_price * self.item_quantity
         print(f"{self.item_name} {self.item_quantity} @ ${self.item_price:.2f} = ${total_cost:.2f}")
 
+# ShoppingCart class with default initialization of customer_name and current_date in default constructor.
 class ShoppingCart:
 
     def __init__(self, customer_name="none", current_date="January 1, 2020"):
@@ -26,7 +29,7 @@ class ShoppingCart:
         self.current_date = current_date
         self.cart_items = []
 
-    # helper method for add, remove, and modify to avoid repetitive code (DRY)
+    # Helper method for add, remove, and modify to avoid repetitive code (DRY)
     def find_item_index(self, item_name):
         i = 0
         while i < len(self.cart_items):
@@ -36,6 +39,7 @@ class ShoppingCart:
             i += 1
         return -1
 
+    # Adds an item to cart_items list. Has parameter ItemToPurchase. Does not return anything.
     def add_item(self, item: ItemToPurchase):
         if self.find_item_index(item.item_name) >= 0:
             print("Item with the same name is already in the cart. A duplicate item was not added.")
@@ -43,6 +47,8 @@ class ShoppingCart:
         # only if item not found, add it
         self.cart_items.append(item)
 
+    # Removes item from cart_items list. Has a string (item_name) parameter.
+    # If item name cannot be found, output: 'Item not found in cart. Nothing removed.'
     def remove_item(self, item_name: str):
         item_index = self.find_item_index(item_name)
         if item_index >= 0:
@@ -50,6 +56,11 @@ class ShoppingCart:
         else:
             print("\nItem not found in cart. Nothing removed.")        
 
+    # Modifies an item's description, price, and/or quantity.
+    # Has parameter ItemToPurchse. Does not return anything.
+    # If item can be found (by name) in cart, check if parameter has default
+    # values for description, price, and quantity. If not, modify item in cart.
+    # If item cannot be found (by name) in cart, output: 'Item not found in cart. Nothing modified.'
     def modify_item(self, item: ItemToPurchase):
         item_index = self.find_item_index(item.item_name)
         if item_index >= 0:
@@ -63,22 +74,26 @@ class ShoppingCart:
         else:
             print("\nItem not found in cart. Nothing modified.")
 
+    # Return quantity of all items in cart. Has no parameters.
     def get_num_items_in_cart(self):
         num_items = 0
         for item in self.cart_items:
             num_items += item.item_quantity
         return num_items
 
+    # Determines and returns total cost of items in cart. Has no parameters.
     def get_cost_of_cart(self):
         total_cost = 0.00
         for item in self.cart_items:
             total_cost += item.item_price * item.item_quantity
         return total_cost
 
+    # Helper method to handle appropriate apostrophe depending on name ending in 's' or not
     def print_cart_heading(self):
         customer_name_suffix = (self.customer_name.endswith('s') and "'") or "'s"
         print(f"{self.customer_name}{customer_name_suffix} Shopping Cart - {self.current_date}")
 
+    # Output total of objects in cart. If cart is empty, output: 'SHOPPING CART IS EMPTY'
     def print_total(self):
         num_items = self.get_num_items_in_cart()
         print("OUTPUT SHOPPING CART")
@@ -91,6 +106,7 @@ class ShoppingCart:
                 item.print_item_cost()
             print(f"Total: ${self.get_cost_of_cart():.2f}")
 
+    # Output each items' description
     def print_descriptions(self):
         print("OUTPUT ITEMS' DESCRIPTIONS")
         self.print_cart_heading()
@@ -101,6 +117,7 @@ class ShoppingCart:
             for item in self.cart_items:
                 print(f"{item.item_name}: {item.item_description}")
 
+# Helper method to handle prompt and error handling for price input from user
 def get_item_price_input():
     try:
         item_price = float(input("Enter the item price: "))
@@ -112,6 +129,7 @@ def get_item_price_input():
     
     return item_price
 
+# Helper method to handle prompt and error handling for quantity input from user
 def get_item_quantity_input():
     try:
         item_quantity = int(input("Enter the item quantity: "))
@@ -123,7 +141,8 @@ def get_item_quantity_input():
     
     return item_quantity
 
-
+# Has a ShoppingCart parameter an outputs a menu of options to manipulate the shopping cart.
+# Each option is represented by a single character. Include error handling for invalid options.
 def print_menu(cart: ShoppingCart):
     option = None
 

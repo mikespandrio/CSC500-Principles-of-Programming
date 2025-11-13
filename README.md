@@ -6,6 +6,7 @@ Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 [Module 4: Portfolio Milestone Assignment](#module-4-portfolio-milestone)  
 [Module 5: Critical Thinking Assignment](#module-5-critical-thinking-assignment)  
 [Module 6: Portfolio Milestone Assignment](#module-6-portfolio-milestone)  
+[Module 7: Critical Thinking Assignment](#module-7-critical-thinking-assignment)  
 
 # Module 1: Critical Thinking Assignment
 
@@ -415,3 +416,46 @@ Write a Python program that expands the shopping cart system using an `ItemToPur
 ***End***
 
 ---
+
+# Module 7: Critical Thinking Assignment
+
+## Overview
+This assignment focuses on using Python dictionaries to store and retrieve structured data.  
+The program must maintain three dictionaries—course rooms, instructors, and meeting times—and allow the user to look up all course details by entering a course number.
+
+All files for this assignment are organized within the following directory:  
+`/Module7/CriticalThinking`
+
+---
+
+## Course Lookup System
+**Objective:**  
+Write a Python program that stores room numbers, instructors, and meeting times for a predefined set of courses using three dictionaries.  
+The program should prompt the user for a course number, validate its existence, and then display the corresponding room, instructor, and meeting time.
+
+**Files Included:**  
+- `dictionaries.py` — Python source file for this assignment
+
+**Pseudocode:**
+
+***Begin***
+
+1. Define dictionary **course_rooms** with keys for course numbers and values for room numbers.  
+2. Define dictionary **course_instructors** with keys for course numbers and values for instructor names.  
+3. Define dictionary **course_times** with keys for course numbers and values for meeting times.
+
+4. Prompt user to **enter a course number**  
+   - Strip whitespace and convert to uppercase.
+
+5. Check whether the entered course number exists in **course_rooms**  
+   - If the course exists:  
+     - Display:  
+       - *"Course Number: [course]"*  
+       - *"Room Number: [room]"*  
+       - *"Instructor: [instructor]"*  
+       - *"Meeting Time: [time]"*  
+   - Else:  
+     - Display error message:  
+       *"A course with that course number does not exist. Please check the course number and try again."*
+
+***End***

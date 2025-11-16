@@ -7,7 +7,6 @@
 # input requirement example output (albeit at the expense of code readability)
 #
 # Solution diverges from Modules 4 & 6 solutions in that cart_items is now a dictionary
-import datetime
 
 # ItemToPurchase class with default constructor, initialization within constructor method
 class ItemToPurchase:

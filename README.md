@@ -7,6 +7,7 @@ Course Assignments - Part of CSU Global Master's in AI &amp; ML Program
 [Module 5: Critical Thinking Assignment](#module-5-critical-thinking-assignment)  
 [Module 6: Portfolio Milestone Assignment](#module-6-portfolio-milestone)  
 [Module 7: Critical Thinking Assignment](#module-7-critical-thinking-assignment)  
+[Module 8: Final Portfolio Project](#module-8-final-portfolio-project)  
 
 # Module 1: Critical Thinking Assignment
 
@@ -457,5 +458,123 @@ The program should prompt the user for a course number, validate its existence, 
    - Else:  
      - Display error message:  
        *"A course with that course number does not exist. Please check the course number and try again."*
+
+***End***
+
+---
+
+# Module 8: Final Portfolio Project  
+**Files Included:**  
+- `portfolio_project.py` — Python source file for this final project
+
+## Overview  
+This final project completes the multi-module Online Shopping Cart system by integrating the `ItemToPurchase` class, a fully-featured `ShoppingCart` class, and a comprehensive menu-driven interface.  
+The program builds on the earlier milestones by incorporating item descriptions, dynamic quantity updates, removal and modification features, date validation, and a user-driven command menu.  
+The resulting script is a complete, functional command-line application that prompts the user for customer details, manages multiple items in the cart, and outputs formatted summaries and descriptions on demand.
+
+---
+
+## Online Shopping Cart – Final Program
+
+**Objective:**  
+Develop a complete online shopping cart application that allows users to add items, remove items, modify item quantities, print item descriptions, and output the full shopping cart summary. The program should validate user input, maintain a collection of purchased items, and present the user with an interactive text-based menu until they choose to quit.
+
+**Features Include:**  
+- Construction of `ShoppingCart` using user-provided customer name and the current date  
+- Dictionary-based storage of `ItemToPurchase` objects keyed by item name  
+- Collection of name, description, price, and quantity for each added item  
+- Ability to remove items or modify their quantity dynamically  
+- Separate outputs for detailed item descriptions and full cart totals  
+- Robust date-format validation (`MonthName Day, Year`)  
+- Repeating menu loop until the user selects the Quit option
+
+---
+
+## Pseudocode
+
+***Begin***
+
+### Step 7: Prompt for customer information and initialize the cart
+1. Display: *"Enter customer's name:"*  
+   - Read input into **customer_name**  
+   - Validate: must not be empty  
+2. Display: *"Enter today's date:"*  
+   - Read input into **current_date**  
+   - Validate against format `"MonthName Day, Year"` (ex: February 1, 2020)  
+3. Echo both values back to the user  
+4. Create a new **ShoppingCart** object with these values
+
+---
+
+### Step 8: Add item to cart (menu option `a`)
+1. Display header: *"ADD ITEM TO CART"*  
+2. Prompt user for:  
+   - item name  
+   - item description  
+   - item price  
+   - item quantity  
+3. Create a new **ItemToPurchase** instance  
+4. Set its attributes to the input values  
+5. Call `cart.add_item(new_item)` to store it in the cart
+
+---
+
+### Step 9: Remove item from cart (menu option `r`)
+1. Display header: *"REMOVE ITEM FROM CART"*  
+2. Prompt user for the item name to remove  
+3. Call `cart.remove_item(item_name)`  
+4. If no matching name exists, display:  
+   *"Item not found in cart. Nothing removed."*
+
+---
+
+### Step 10: Change item quantity (menu option `c`)
+1. Display header: *"CHANGE ITEM QUANTITY"*  
+2. Prompt for the name of the item to modify  
+3. Prompt for the new quantity  
+4. Create a temporary **ItemToPurchase** object containing only the item name and updated quantity  
+5. Call `cart.modify_item(temp_item)`  
+6. If the item is not found, output:  
+   *"Item not found in cart. Nothing modified."*
+
+---
+
+### Supporting Menu Options
+#### Option `i`: Output Item Descriptions  
+1. Display: *"OUTPUT ITEMS' DESCRIPTIONS"*  
+2. Call `cart.print_descriptions()`, which prints:  
+   - customer name and date  
+   - “Item Descriptions” header  
+   - each item in the format `"Name: Description"`
+
+#### Option `o`: Output Shopping Cart  
+1. Display: *"OUTPUT SHOPPING CART"*  
+2. Call `cart.print_total()`, which prints:  
+   - cart header (customer name + date)  
+   - number of items  
+   - each item’s cost line (`name qty @ $price = $total`)  
+   - overall cart total  
+3. If the cart is empty, display:  
+   *"SHOPPING CART IS EMPTY"*
+
+---
+
+### Step 5: Implement the `print_menu(cart)` loop
+1. Display menu:  
+   ```
+   MENU
+   a - Add item to cart
+   r - Remove item from cart
+   c - Change item quantity
+   i - Output items' descriptions
+   o - Output shopping cart
+   q - Quit
+   ```
+2. Prompt user for a single-character selection  
+3. On invalid input, re-prompt until valid  
+4. Execute corresponding action (`a`, `r`, `c`, `i`, `o`)  
+5. Repeat until `q` is entered  
+
+---
 
 ***End***

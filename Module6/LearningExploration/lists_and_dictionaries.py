@@ -16,12 +16,15 @@ popped_value = my_list.pop(2) # my_list becomes [1, 2, ‘a’, ‘b’, ‘c’
 del my_list[2] # my_list becomes [1, 2, ‘b’, ‘c’]
 
 fibonacci = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] # first 10 numbers in the Fibonacci sequence, order matters
-print(fibonacci)
+#print(fibonacci)
 # append the 11th fibonacci number by calculating it based on the value at the 8th index + the value at the 9th index
 fibonacci.append(fibonacci[len(fibonacci) - 2] + fibonacci[len(fibonacci) - 1]) # adds 55 at index 10 of the list
 # get the 4th element in the Fibonacci sequence
 value = fibonacci[3] # 3rd index is 4th value in the list. value equals 2
 
+
+my_list = [1, 1, 2, 3, 5, 8, 13, 21, 34]
+print(my_list[3:1:-1])
 
 # define dictionary my_dict — note: I deliberately used a combination of numbers and letters as keys/values to show that data types can be mixed in dictionaries
 my_dict = {"a": 1, 2: "b", "c": 3}
@@ -38,6 +41,6 @@ del my_dict[2] # my_dict becomes {‘a’: 1}
 
 high_temps = { "January": 5, "February": 7, "March": 12, "April": 18, "May": 22, "June": 27, "July": 30, "August": 29, "September": 24, "October": 17, "November": 10, "December": 6 }
 # retrieve and print high temp for August
-print(f"High temp for August was: {high_temps['August']}")
+#print(f"High temp for August was: {high_temps['August']}")
 # correct the data for February
 high_temps['February'] = 9
